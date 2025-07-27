@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+<g transform="matrix(1 0 0 1 540 540)" id="458c8b0a-3aca-4b13-8547-866d251b8c72"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="2ecfb2e2-7b00-4ede-9aef-7be4ee1f9c28"  >
+</g>
+<g transform="matrix(0.22 0 0 -0.22 540 540)"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-5008.03, -6420.92)" d="M 4789 7952 C 4429 7347 3855 6387 3460 5725 C 2804 4628 2640 4351 2640 4346 C 2640 4343 2756 4340 2898 4340 L 3156 4340 L 3271 4422 C 3992 4939 4651 5212 5370 5291 C 5500 5305 5856 5305 5976 5290 C 6315 5249 6714 5123 6994 4968 C 7084 4918 7230 4827 7323 4762 C 7350 4744 7374 4730 7376 4733 C 7378 4735 7335 4811 7279 4901 C 7122 5154 6189 6710 5640 7635 C 5077 8583 5127 8500 5120 8500 C 5117 8499 4968 8253 4789 7952 z M 5167 7188 C 5248 7060 5950 5861 5960 5835 C 5966 5820 5969 5806 5967 5804 C 5966 5802 5922 5833 5870 5873 C 5731 5978 5398 6225 5374 6240 C 5355 6251 5340 6245 5219 6175 C 4794 5928 4440 5660 3975 5232 C 3915 5177 3864 5133 3862 5135 C 3860 5137 3873 5167 3892 5202 C 3930 5272 4805 6751 4963 7010 C 5101 7237 5109 7250 5119 7250 C 5124 7250 5146 7222 5167 7188 z" stroke-linecap="round" />
+</g>
+</svg>

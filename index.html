@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX SECURITIES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #3c0d0d;
+      color: white;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: #2b0a0a;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      background-color: #622323;
+      color: #000;
+      padding: 8px 15px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 30px;
+      margin-right: 0.5rem;
+    }
+
+    .logo n {
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: #ff5e42;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: #5e2a2a;
+      color: white;
+    }
+
+    /* Hamburger menu button */
+    .menu-toggle {
+      position: relative;
+      left: 2rem;
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      justify-content: space-between;
+    }
+
+    .bar {
+      height: 4px;
+      width: 100%;
+      background-color: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        overflow: hidden;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-height: 0;
+        background: #2b0a0a;
+        position: absolute;
+        top: 100%; /* Below header */
+        left: 0;
+        padding: 0;
+      }
+
+      nav.active {
+        max-height: 500px;
+        padding: 1rem 2rem;
+      }
+
+      nav a,
+      .btn {
+        margin: 1rem 0;
+        font-size: 1rem;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    .hero {
+      padding: 6rem 4rem;
+      text-align: left;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      max-width: 600px;
+      min-width: 40%;
+    }
+
+    .main {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      max-width: 400px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons .btn {
+      margin-right: 1rem;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 350px;
+      background: #ccc;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 5rem 4rem;
+      background: #622323;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      max-width: 700px;
+    }
+
+    .grid {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .grid-item {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .pricing-section {
+      background: #fff;
+      color: #000;
+      padding: 5rem 4rem;
+      text-align: center;
+    }
+
+    .pricing-section h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .plans {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .plan {
+      border: 1px solid #ccc;
+      padding: 2.5rem;
+      border-radius: 12px;
+      width: 280px;
+      background: #f9f9f9;
+    }
+
+    .plan h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .plan p {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .plan ul {
+      text-align: left;
+      margin: 1rem 0;
+      padding-left: 1rem;
+    }
+
+    .plan ul li {
+      margin-bottom: 0.75rem;
+    }
+
+    footer {
+      background: #f2f2f2;
+      color: #000;
+      padding: 4rem 4rem 2rem;
+    }
+
+    footer .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    footer h4 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      font-weight: bold;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer input[type=email] {
+      padding: 0.6rem;
+      width: 250px;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    footer button {
+      padding: 0.6rem 1.2rem;
+      background-color: #ff5e42;
+      color: white;
+      border: none;
+      margin-left: 0.5rem;
+      border-radius: 5px;
+    }
+
+    footer p {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+      }
+
+      .main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .image-placeholder {
+        height: 200px;
+        margin-top: 1rem;
+      }
+
+      .section {
+        padding: 2rem 1rem;
+      }
+
+      .grid {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .plans {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      footer {
+        padding: 2rem 1rem;
+      }
+
+      footer input[type=email] {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      footer button {
+        width: 100%;
+        margin: 0.5rem 0 0;
+      }
+    .logo {
+      position: relative;
+      left: -2.5rem;
+      font-size: 1.8rem;
+      background-color: #622323;
+      color: #000;
+      padding: 8px 15px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 0.5rem;
+    }
+
+    .logo x {
+      position: absolute;
+      opacity: 0;
+    }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo3.svg" height="40rem"><n>APEX <x>SECURITIES</x></n>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <nav id="nav">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Pricing & Plans</a>
+      <a href="#">About Us</a>
+      <button class="btn btn-secondary">Sign Up</button>
+      <button class="btn btn-primary">Login</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="main">
+      <h1>SECURE YOUR PEACE OF MIND TODAY</h1>
+      <div class="content">
+        <p>Experience top-tier security with our subscription-based service, featuring highly trained ex-military and police personnel.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">Learn More</button>
+          <button class="btn btn-secondary">Sign Up</button>
+        </div>
+      </div>
+    </div>
+    <div class="image-placeholder">
+      <p>Image Placeholder</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>YOUR SAFETY WITH OUR SUBSCRIPTION SERVICE</h2>
+    <p>Our subscription service offers flexible security solutions tailored to your needs. Choose from three tiers: Base, Gold, and Platinum.</p>
+    <div class="grid">
+      <div class="grid-item">
+        <h3>CHOOSE YOUR SUBSCRIPTION TIER</h3>
+        <p>Select the tier that best fits your security needs.</p>
+      </div>
+      <div class="grid-item">
+        <h3>HOW TO HIRE SECURITY PERSONNEL</h3>
+        <p>Simply sign up, choose your tier, and book.</p>
+      </div>
+      <div class="grid-item">
+        <h3>EXPERIENCE PEACE OF MIND TODAY</h3>
+        <p>Our professionals are ready to protect you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section">
+    <h2>WHY CHOOSE EX-ARMY AND POLICE OFFICERS?</h2>
+    <p>Hiring ex-army and police officers ensures top-notch security backed by training and experience.</p>
+    <div class="grid">
+      <div class="grid-item">
+        <h3>EXPERTISE IN CRISIS MANAGEMENT AND RESPONSE</h3>
+        <p>These professionals are trained to handle emergencies effectively.</p>
+      </div>
+      <div class="grid-item">
+        <h3>HIGHLY TRAINED AND RELIABLE SECURITY PERSONNEL</h3>
+        <p>Their backgrounds ensure a high level of reliability.</p>
+      </div>
+      <div class="grid-item">
+        <h3>FLEXIBLE HOURLY SUBSCRIPTION PLANS TO FIT YOUR NEEDS</h3>
+        <p>Choose from base, gold, or platinum tiers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section">
+    <h2>PRICING & PLANS</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>BASE PLAN</h3>
+        <p>$19/MO</p>
+        <ul>
+          <li>Ex-army security personnel</li>
+          <li>24/7 customer support</li>
+          <li>Flexible hourly rates</li>
+        </ul>
+        <button class="btn btn-primary">Get started</button>
+      </div>
+      <div class="plan">
+        <h3>GOLD PLAN</h3>
+        <p>$29/MO</p>
+        <ul>
+          <li>Enhanced security features</li>
+          <li>Priority support access</li>
+          <li>Monthly security reports</li>
+          <li>Ex-army and police</li>
+        </ul>
+        <button class="btn btn-primary">Get started</button>
+      </div>
+      <div class="plan">
+        <h3>ENTERPRISE PLAN</h3>
+        <p>$49/MO</p>
+        <ul>
+          <li>Customizable options</li>
+          <li>Dedicated account manager</li>
+          <li>Advanced threat detection</li>
+          <li>Comprehensive security</li>
+        </ul>
+        <button class="btn btn-primary">Get started</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Subscribe for updates</h3>
+    <p>Stay informed about our security services and offers.</p>
+    <input type="email" placeholder="Your Email Here">
+    <button>Subscribe</button>
+    <div class="footer-columns">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Home Page</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li>Terms of Service</li>
+          <li>Privacy Policy</li>
+          <li>Careers</li>
+          <li>Testimonials</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Instagram</li>
+          <li>YouTube</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li>Webinars</li>
+          <li>Case Studies</li>
+          <li>Press Releases</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <ul>
+          <li>Email Us Here</li>
+          <li>Call Us Today</li>
+          <li>Visit Our Office</li>
+          <li>Feedback Form</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stay Connected</h4>
+        <ul>
+          <li>Special Offers</li>
+          <li>Join Us</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top: 2rem;">&copy; 2025 APEX SECURITIES. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
