@@ -61,13 +61,15 @@
       align-items: center;
       flex-wrap: wrap;
       transition: max-height 0.3s ease, padding 0.3s ease;
+      overflow-x: hidden;
     }
 
     nav a {
       color: white;
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       text-decoration: none;
       font-size: 1rem;
+      white-space: nowrap;
     }
 
     .btn {
@@ -77,6 +79,7 @@
       cursor: pointer;
       margin-left: 1rem;
       font-size: 0.95rem;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -89,10 +92,7 @@
       color: white;
     }
 
-    /* Hamburger menu button */
     .menu-toggle {
-      position: relative;
-      left: 2rem;
       display: none;
       flex-direction: column;
       cursor: pointer;
@@ -130,7 +130,7 @@
         max-height: 0;
         background: #2b0a0a;
         position: absolute;
-        top: 100%; /* Below header */
+        top: 100%;
         left: 0;
         padding: 0;
       }
@@ -150,7 +150,6 @@
         display: flex;
       }
     }
-
     .hero {
       padding: 6rem 4rem;
       text-align: left;
@@ -227,42 +226,8 @@
       padding-top: 1rem;
 
     }
-.pricing-section .grid .grid-item .txt p {
-  position: relative;
-  text-align: center;
-  justify-items: center;
-  justify-content: center;
-}
-.pricing-section .grid .grid-item .txt h3 {
-  position: relative;
-  font-size: 1.8rem;
-  justify-items: center;
-  justify-content: center;
-}
-    .pricing-section {
-      position: relative;
-      background: #fff;
-      color: #000;
-      padding: 5rem 4rem;
-      text-align: center;
-    }
 
-    .pricing-section h2 {
-  padding: 2rem;
-  font-size: 3.5rem;
-  max-width: 70%;
-  margin: 0 auto 1rem; /* centers horizontally */
-  text-align: center;  /* centers the text */
-  line-height: 1;
-}
 
-.pricing-section p {
-  max-width: 100%;
-  min-width: 70%;
-  margin: 0 auto 2rem; /* centers paragraph block */
-  text-align: center;  /* centers the text */
-  font-size: 1.2rem;
-}
 
   
     .plans {
@@ -351,14 +316,7 @@
     }
 
     @media (max-width: 768px) {
-  .pricing-section h2 {
-      padding: 2rem;
-      font-size: 2rem;
-      max-width: 100%;
-      margin: 0 auto 1rem;
-      text-align: center;
-      line-height: 1;
-    }
+  
     .service{
       position: relative;
       display: flex;
@@ -441,9 +399,15 @@
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
     }
+    .pricing-section h2 {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
 }
 .service{
   display: flex;
+  padding-bottom: 3rem;
 }
 .service p{
   max-width: 45%;
@@ -457,11 +421,7 @@
   position: relative;
    padding-top: 1rem;
 }
-.ico svg{
-  position: relative;
-  height: 4rem;
-  fill: white;
-}
+
 .grid-item h3{
   padding-top: 1rem;
   font-size: 2.3rem;
@@ -472,15 +432,13 @@
   display: block ;
   justify-content: center;
 }
-.pricing-section p{
-  max-width: 50%;
-}
+
 .icon svg{
   position: relative;
   fill: #000;
   height: 3rem;
 }
-    @media (max-width: 480px) {
+@media (max-width: 480px) {
   header {
     flex-wrap: wrap;
     padding: 1rem 1.5rem;
@@ -565,19 +523,6 @@
     text-align: center;
   }
 
-  .pricing-section {
-    padding: 2rem 1rem;
-  }
-
-  .pricing-section h2 {
-    font-size: 1.5rem;
-    padding: 1rem;
-  }
-
-  .pricing-section p {
-    max-width: 100%;
-    font-size: 0.9rem;
-  }
 
   .plans {
     flex-direction: column;
@@ -600,7 +545,79 @@
     width: 100%;
     margin-top: 0.5rem;
   }
+  nav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+nav a {
+  margin: 0;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: left;
+}
+}
+.pricing-section {
+      position: relative;
+      display: block;
+      background: #fff;
+      color: #000;
+      padding: 5rem 4rem;
+      text-align: center;
+}
+.pricing-section h2 {
+    font-size: 3rem;
+    padding: 1rem;
+    line-height: 1;
+    padding-bottom: 3.5rem;
+}
+  .pricing-section p {
+    padding-bottom: 2.5rem;
+}
+.txt{
+  display: block;
+}
+.txt h3{
+  justify-content: center;
+  font-size: 1.5rem;
+
+}
+.txt p{
+  justify-content: center;
+
+}
+.txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+  justify-content: center; /* centers vertically */
+  text-align: center; /* centers text */
+}
+
+.txt h3,
+.txt p {
+  margin: 0.5rem 0;
+}
+.ico svg{
+  position: relative;
+  height: 4rem;
+  fill: white;
+}
+.icon svg{
+  position: relative;
+  display: flex;
+  left:5rem;
+  margin-bottom: 1rem; /* space between icon and text */
+}
+
+.icon svg {
+  width: 60px;  /* adjust size if needed */
+  height: 60px;
+  display: block;
+}
+
 
   </style>
 </head>
@@ -668,8 +685,8 @@ simple, allowing you to book ex-army and police officers by the hour.</p>
   </section>
 
   <section class="pricing-section">
-    <h2>WHY CHOOSE EX-ARMY AND POLICE OFFICERS?</h2>
-    <p>Hiring ex-army and police officers ensures top-notch security backed by extensive training and experience. Their discipline and quick decision-making skills provide peace of mind for any situation.</p>
+    <h2>WHY CHOOSE EX-ARMY AND POLICE<br> OFFICERS?</h2>
+    <p>Hiring ex-army and police officers ensures top-notch security backed by extensive training and experience.<br> Their discipline and quick decision-making skills provide peace of mind for any situation.</p>
     <div class="grid">
       <div class="grid-item">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M272.5 96C272.5 78.3 286.8 64 304.5 64L336.5 64C354.2 64 368.5 78.3 368.5 96L368.5 236.9L490.5 166.5C505.8 157.7 525.4 162.9 534.2 178.2L550.2 205.9C559 221.2 553.8 240.8 538.5 249.6L416.5 320L538.5 390.4C553.8 399.2 559.1 418.8 550.2 434.1L534.2 461.8C525.4 477.1 505.8 482.4 490.5 473.5L368.5 403.1L368.5 544C368.5 561.7 354.2 576 336.5 576L304.5 576C286.8 576 272.5 561.7 272.5 544L272.5 403.1L150.5 473.5C135.2 482.3 115.6 477.1 106.8 461.8L90.8 434.1C82 418.8 87.2 399.2 102.5 390.4L224.5 320L102.5 249.6C87.2 240.8 82 221.2 90.8 205.9L106.8 178.2C115.6 162.9 135.2 157.7 150.5 166.5L272.5 236.9L272.5 96z"/></svg>
