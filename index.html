@@ -6,7 +6,10 @@
   <title>APEX SECURITIES</title>
   <link rel="icon" href="logo3.svg">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -84,11 +87,6 @@
 
     .btn-primary {
       background-color: #ff5e42;
-      color: white;
-    }
-
-    .btn-secondary {
-      background-color: #5e2a2a;
       color: white;
     }
 
@@ -180,7 +178,15 @@
 
     .hero-buttons .btn {
       margin-right: 1rem;
+      transition: 20ms ease-in-out;
     }
+    .hero-buttons .btn:hover{
+      position: relative;
+      top: 2px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.36);
+
+    }
+
 
     .image-placeholder {
       width: 100%;
@@ -230,41 +236,93 @@
 
 
   
-    .plans {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 3rem;
-    }
+.plans {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  max-width: 1200px; /* wide like original */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
 
-    .plan {
-      border: 1px solid #ccc;
-      padding: 2.5rem;
-      border-radius: 12px;
-      width: 280px;
-      background: #f9f9f9;
-    }
+.plan {
+  flex: 1 1 320px;
+  max-width: 360px;
+  border: 1px solid #ccc;
+  padding: 2.5rem;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .plan h3 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
+.plan:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
 
-    .plan p {
-      font-size: 2rem;
-      font-weight: bold;
-    }
+.plan h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
 
-    .plan ul {
-      text-align: left;
-      margin: 1rem 0;
-      padding-left: 1rem;
-    }
+.plan p {
+  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
 
-    .plan ul li {
-      margin-bottom: 0.75rem;
-    }
+.plan ul {
+  text-align: left;
+  margin: 1.5rem 0 2rem;
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.plan ul li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 1rem;
+}
+
+.plan ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #FF5A3C;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .plans {
+    gap: 1.5rem;
+    padding: 0 1rem;
+    justify-content: center; /* ensure center alignment */
+  }
+  .plan {
+    flex: 1 1 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .plans {
+    flex-direction: column;
+    align-items: center; /* center all cards */
+  }
+  .plan {
+    width: 90%;
+    max-width: 400px;
+  }
+}
 
     footer {
       background: #f2f2f2;
@@ -530,7 +588,7 @@
   }
 
   .plan {
-    width:110%;
+    width: 110%;
   }
 
   footer {
@@ -617,7 +675,162 @@ nav a {
   height: 60px;
   display: block;
 }
+.hero-section {
+  background-color: white ;
+  text-align: center;
+  padding: 4rem 2rem;
+}
 
+.hero-actions {
+  top: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.hero-content{
+  text-align: center;
+  left: 10%;
+}
+.hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.btn-primary {
+  background-color: #FF5A3C;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  height: fit-content;
+}
+
+
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+.secure{
+  position: relative;
+  top: 2.5rem;
+}
+.pop{
+    position: relative;
+  top: -2rem;
+}
+.btn.btn-primary {
+  background-color: #FF5A3C;
+  color: #fff;
+  border: none;
+
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 90, 60, 0.4);
+  background-color: #e14d30; /* slightly darker on hover */
+}
+
+.btn.btn-secondary {
+  background-color: #5e2a2a;
+  color: #fff;
+  border: none;
+
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn.btn.btn-secondary:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px #5e2a2a77;
+  background-color: #532626; /* slightly darker on hover */
+}
+.btn-primary {
+  background-color: #FF5A3C;
+  color: #fff;
+  border: none;
+
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 90, 60, 0.4);
+  background-color: #fa5230; /* slightly darker on hover */
+}
+
+.btn-outline {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  height: fit-content;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.btn-outline:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(152, 152, 152, 0.4);
+  background-color: #ffffff00; /* slightly darker on hover */
+}
+header nav .btn:hover {
+  transform: scale(0.95) !important; /* shrink on hover */
+  box-shadow: none !important;       /* remove glow if inherited */
+}
+header nav a{
+  transition: 50ms ease-in-out;
+}
+header nav a:hover{
+  transform: scale(0.95);
+}
+.fp p{
+  position: relative;
+  justify-content: left !important;
+  text-align: left;
+  top: -2.5rem;
+}
+.fp h3{
+  justify-content: left !important;
+  text-align: left;
+  top: 2rem;
+}
+.fp svg{
+  height: 1rem;
+}
+.email{
+  position: relative;
+  top: -2.5rem;
+}
+.email button{
+  transition: 50ms ease-in-out;
+}
+.email button:hover{
+  transform: scale(0.95);
+}
 
   </style>
 </head>
@@ -691,8 +904,9 @@ simple, allowing you to book ex-army and police officers by the hour.</p>
       <div class="grid-item">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M272.5 96C272.5 78.3 286.8 64 304.5 64L336.5 64C354.2 64 368.5 78.3 368.5 96L368.5 236.9L490.5 166.5C505.8 157.7 525.4 162.9 534.2 178.2L550.2 205.9C559 221.2 553.8 240.8 538.5 249.6L416.5 320L538.5 390.4C553.8 399.2 559.1 418.8 550.2 434.1L534.2 461.8C525.4 477.1 505.8 482.4 490.5 473.5L368.5 403.1L368.5 544C368.5 561.7 354.2 576 336.5 576L304.5 576C286.8 576 272.5 561.7 272.5 544L272.5 403.1L150.5 473.5C135.2 482.3 115.6 477.1 106.8 461.8L90.8 434.1C82 418.8 87.2 399.2 102.5 390.4L224.5 320L102.5 249.6C87.2 240.8 82 221.2 90.8 205.9L106.8 178.2C115.6 162.9 135.2 157.7 150.5 166.5L272.5 236.9L272.5 96z"/></svg>
 </div>
-        <div class="txt"><h3>EXPERTISE IN CRISIS MANAGEMENT AND RESPONSE</h3>
-        <p>These professionals are trained to handle emergencies effectively.</p></div>
+    <div class="txt"><h3>EXPERTISE IN CRISIS MANAGEMENT AND RESPONSE</h3>
+        <p>These professionals are trained to handle emergencies effectively.</p>
+      </div>
       </div>
       <div class="grid-item">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M278.9 78.1C266 79.2 256 90 256 103C256 116.8 267.2 128 281 128L432 128C440.8 128 448 120.8 448 112L448 81.4C448 72 440 64.7 430.7 65.4L278.9 78.1zM272 176C272 220.2 307.8 256 352 256C396.2 256 432 220.2 432 176C432 170.5 431.4 165.2 430.4 160L273.6 160C272.6 165.2 272 170.5 272 176zM104 288C81.9 288 64 305.9 64 328C64 350.1 81.9 368 104 368L256 368L256 457.4L418.8 294.6C405.5 290.3 391.5 288.1 377.2 288.1L104 288zM449.7 308.9L278.6 480L448 480L448 433.7L501.6 524.3C512.8 543.3 537.4 549.6 556.4 538.4C575.4 527.2 581.7 502.6 570.5 483.6L494.3 354.8C483.1 335.8 467.7 320.3 449.7 308.9zM256 512L256 544C256 561.7 270.3 576 288 576L416 576C433.7 576 448 561.7 448 544L448 512L256 512z"/></svg></div>  
@@ -705,14 +919,41 @@ simple, allowing you to book ex-army and police officers by the hour.</p>
         <p>Choose from base, gold, or platinum tiers.</p></div>
       </div>
     </div>
-  </section>
+    <div class="d1">
+      <div class="hero-actions top-actions">
+    <button class="btn-outline">Learn More</button>
+    <button class="btn-link">Sign Up ></button>
+  </div>
+    </div>
+    
 
-  <section class="pricing-section">
+  </section>
+<section class="hero-section">
+  
+  <div class="hero-content">
+    <h1>SECURE YOUR PEACE OF MIND</h1>
+    <p>Hire Trusted Security Professionals Today!</p>
+  </div>
+
+<div class="d">
+    <div class="hero-actions bottom-actions">
+    <button class="btn-primary">Subscribe</button>
+    <button class="btn-outline">Contact</button>
+  </div>
+</div>
+</section>
+
+
+<div class="d3">
+    <section class="pricing-section">
+      <div class="secure"><p>SECURE</p></div>
+    
     <h2>PRICING & PLANS</h2>
+    <p class="pop">Choose the right plan for your security needs.</p>
     <div class="plans">
       <div class="plan">
         <h3>BASE PLAN</h3>
-        <p>$19/MO</p>
+        <p>₹249/Hr</p>
         <ul>
           <li>Ex-army security personnel</li>
           <li>24/7 customer support</li>
@@ -722,7 +963,7 @@ simple, allowing you to book ex-army and police officers by the hour.</p>
       </div>
       <div class="plan">
         <h3>GOLD PLAN</h3>
-        <p>$29/MO</p>
+        <p>₹399/Hr</p>
         <ul>
           <li>Enhanced security features</li>
           <li>Priority support access</li>
@@ -732,8 +973,8 @@ simple, allowing you to book ex-army and police officers by the hour.</p>
         <button class="btn btn-primary">Get started</button>
       </div>
       <div class="plan">
-        <h3>ENTERPRISE PLAN</h3>
-        <p>$49/MO</p>
+        <h3>PLATINUM PLAN</h3>
+        <p>₹499/Hr</p>
         <ul>
           <li>Customizable options</li>
           <li>Dedicated account manager</li>
@@ -745,11 +986,15 @@ simple, allowing you to book ex-army and police officers by the hour.</p>
     </div>
   </section>
 
+</div>
+
   <footer>
-    <h3>Subscribe for updates</h3>
-    <p>Stay informed about our security services and offers.</p>
-    <input type="email" placeholder="Your Email Here">
-    <button>Subscribe</button>
+
+    <div class="fp">    <h3>Subscribe for updates <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M320 64C306.7 64 296 74.7 296 88L296 97.7C214.6 109.3 152 179.4 152 264L152 278.5C152 316.2 142 353.2 123 385.8L101.1 423.2C97.8 429 96 435.5 96 442.2C96 463.1 112.9 480 133.8 480L506.2 480C527.1 480 544 463.1 544 442.2C544 435.5 542.2 428.9 538.9 423.2L517 385.7C498 353.1 488 316.1 488 278.4L488 263.9C488 179.3 425.4 109.2 344 97.6L344 87.9C344 74.6 333.3 63.9 320 63.9zM488.4 432L151.5 432L164.4 409.9C187.7 370 200 324.6 200 278.5L200 264C200 197.7 253.7 144 320 144C386.3 144 440 197.7 440 264L440 278.5C440 324.7 452.3 370 475.5 409.9L488.4 432zM252.1 528C262 556 288.7 576 320 576C351.3 576 378 556 387.9 528L252.1 528z"/></svg></h3><p>Stay informed about our security services and offers.</p>   
+    <div class="email"><input type="email" placeholder="Your Email Here">
+    <button>Subscribe</button></div>
+  </div>
+
     <div class="footer-columns">
       <div>
         <h4>Quick Links</h4>
