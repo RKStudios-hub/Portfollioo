@@ -1,0 +1,520 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career - Security Hiring</title>
+  <link rel="icon" href="logo3.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header, footer {
+      background-color: #2b0a0a;
+    }
+    header nav a:hover, .hover\:underline:hover {
+      text-decoration: underline;
+    }
+    button, input[type="submit"] {
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover, input[type="submit"]:hover {
+      opacity: 0.9;
+    }
+    .bg-red-500 {
+      background-color: #EF4444;
+    }
+    .text-red-500 {
+      color: #EF4444;
+    }
+    .text-gray-900 {
+      color: #111827;
+    }
+    .text-gray-600 {
+      color: #4B5563;
+    }
+    .text-gray-500 {
+      color: #6B7280;
+    }
+    .bg-gray-50 {
+      background-color: #F9FAFB;
+    }
+    .bg-gray-200 {
+      background-color: #E5E7EB;
+    }
+    .bg-red-50 {
+      background-color: #FEF2F2;
+    }
+    .rounded {
+      border-radius: 0.375rem;
+    }
+    .rounded-full {
+      border-radius: 9999px;
+    }
+    .shadow-md {
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+    .font-bold { font-weight: 700; }
+    .font-semibold { font-weight: 600; }
+    .font-extrabold { font-weight: 800; }
+    .text-xl { font-size: 1.25rem; }
+    .text-3xl { font-size: 1.875rem; }
+    .text-4xl { font-size: 2.25rem; }
+    .text-sm { font-size: 0.875rem; }
+    .text-lg { font-size: 1.125rem; }
+    .w-full { width: 100%; }
+    .max-w-7xl { max-width: 80rem; }
+    .max-w-6xl { max-width: 72rem; }
+    .max-w-4xl { max-width: 56rem; }
+    .max-w-xl { max-width: 36rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .my-4 { margin-top: 1rem; margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mt-2 { margin-top: 0.5rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-8 { margin-top: 2rem; }
+    .p-1 { padding: 0.25rem; }
+    .p-2 { padding: 0.5rem; }
+    .p-4 { padding: 1rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    .space-x-2 > * + * { margin-left: 0.5rem; }
+    .space-x-4 > * + * { margin-left: 1rem; }
+    .space-y-2 > * + * { margin-top: 0.5rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .space-y-6 > * + * { margin-top: 1.5rem; }
+    .space-y-8 > * + * { margin-top: 2rem; }
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+    .inline-flex { display: inline-flex; align-items: center; }
+    .hidden { display: none; }
+    .block { display: block; }
+    .grid { display: grid; }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
+    .h-16 { height: 4rem; }
+    .h-24 { height: 6rem; }
+    .h-40 { height: 10rem; }
+    .w-24 { width: 6rem; }
+    .border { border: 1px solid #D1D5DB; }
+    .border-t { border-top: 1px solid #D1D5DB; }
+    .border-gray-200 { border-color: #E5E7EB; }
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .left-0 { left: 0; }
+    .right-0 { right: 0; }
+    .top-0 { top: 0; }
+    .mt-2 { margin-top: 0.5rem; }
+    .z-50 { z-index: 50; }
+    @media (min-width: 768px) {
+      .md\:flex { display: flex; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .md\:block { display: block; }
+      .md\:hidden { display: none; }
+    }
+ 
+        :root {
+      --primary: #EF4444;              /* Red */
+      --text-dark: #111827;           /* Dark gray for text */
+      --text-muted: #6B7280;          /* Gray for subtext */
+      --bg-light: #F9FAFB;            /* Light gray background */
+      --bg-highlight: #FEF2F2;        /* Pale red background */
+      --border-light: #E5E7EB;        /* Light border gray */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      margin: 0;
+      background: white;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+      margin: 0 0 0.5rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 1rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border-light);
+      background: transparent;
+      color: var(--text-dark);
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .hero {
+      background: var(--bg-light);
+      text-align: center;
+      padding: 6rem 1rem;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+    }
+
+    .card {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      text-align: center;
+    }
+
+    .team-grid, .job-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .bg-faint {
+      background-color: var(--bg-highlight);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid var(--border-light);
+      border-radius: 0.375rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: white;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+    }
+    .f,.logo{
+      color: #ffffff;
+    }
+    .logo{
+      display: flex;
+    }
+    .logo img{
+      height: 2rem;
+      margin-right: .5rem;
+    }
+    .path{
+      color: white;
+    }
+    .open .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.open .line2 {
+  opacity: 0;
+}
+.open .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.open .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+  transform-origin: center;
+}
+.open .line2 {
+  opacity: 0;
+}
+.open .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+  transform-origin: center;
+}
+.t{
+  position: relative;
+  margin-right: 3rem;
+}
+a{
+  font-weight: 400;
+  font-size: 1rem;
+  transition: 50ms ease-in-out;
+}
+a:hover{
+  transform: scale(0.95) !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+.f{
+  transition: transform 0.5s ease, box-shadow 0.3s ease,;
+}
+.f:hover{  
+  transform: scale(.95)!important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4)!important;
+}
+.im{
+  transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+}
+.im:hover{  
+  transform: scale(1.02)!important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.053)!important;
+}
+.R{
+  transition: 50ms ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.R:hover{
+    transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 90, 60, 0.4);
+  background-color: #fa5230; /* slightly darker on hover */
+}
+.C{
+  transition: 50ms ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.C:hover{
+    transform: translateY(-3px) scale(.95);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.089);
+  background-color: #00000000; /* slightly darker on hover */
+}
+
+
+  </style>
+  <script defer>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    }
+    
+function toggleMenu(button) {
+  const menu = document.getElementById('mobileMenu');
+  const lines = button.querySelectorAll('path');
+  menu.classList.toggle('hidden');
+
+  if (!menu.classList.contains('hidden')) {
+    // Change to "X"
+    lines[0].setAttribute('d', 'M6 18L18 6');
+    lines[1].setAttribute('d', '');
+    lines[2].setAttribute('d', 'M6 6l12 12');
+  } else {
+    // Change back to hamburger
+    lines[0].setAttribute('d', 'M4 6h16');
+    lines[1].setAttribute('d', 'M4 12h16');
+    lines[2].setAttribute('d', 'M4 18h16');
+  }
+}
+function toggleMenu(button) {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('hidden');
+  button.classList.toggle('open');
+}
+
+  </script>
+</head>
+<body class="font-sans antialiased text-gray-900">
+  <!-- Navbar -->
+  <header class=" shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <div class="logo text-xl font-bold"><img src="logo3.svg" ><n>APEX <x>SECURITIES</x></n></div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="f">Home</a>
+        <a href="#" class="f">Services</a>
+        <a href="#" class="f">Pricing & Plans</a>
+        <a href="#" class="f">About Us</a>
+        <div class="relative group">
+          <button class="f"><a>More Info</a></button>
+          <div class="hidden absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg p-4 space-y-2 group-hover:block">
+            <div>
+              <p class="font-semibold">Explore Opportunities</p>
+              <ul class="list-disc ml-5">
+                <li>Job Openings</li>
+                <li>Join Forces</li>
+                <li>Current Roles</li>
+                <li>Apply Today</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold">Career Resources</p>
+              <ul class="list-disc ml-5">
+                <li>Training Programs</li>
+                <li>Benefits Overview</li>
+                <li>Employee Stories</li>
+                <li>Job Alerts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="space-x-2 hidden md:block">
+        <button class="f border px-4 py-2 rounded">Apply</button>
+        <button class="f bg-red-500 text-white px-4 py-2 rounded">Join</button>
+      </div>
+
+<button class="md:hidden" onclick="toggleMenu(this)">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" class="w-6 h-6">
+    <line class="line1 transition-transform duration-300" x1="3" y1="6" x2="21" y2="6" stroke-width="2" stroke-linecap="round"/>
+    <line class="line2 transition-opacity duration-300" x1="3" y1="12" x2="21" y2="12" stroke-width="2" stroke-linecap="round"/>
+    <line class="line3 transition-transform duration-300" x1="3" y1="18" x2="21" y2="18" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<div id="mobileMenu" class="hidden bg-white text-black absolute top-16 left-0 w-full p-4">
+  <a href="#" class="block py-2">Home</a>
+  <a href="#" class="block py-2">Services</a>
+  <a href="#" class="block py-2">Pricing & Plans</a>
+  <a href="#" class="block py-2">About Us</a>
+</div>
+
+
+  </header>  <!-- Hero -->  <section class="S1 bg-red-50 text-center py-20">
+    <h1 class="text-4xl font-extrabold mb-4">YOUR FUTURE AWAITS</h1>
+    <p class="mb-6 text-lg">Explore exciting career opportunities with us and make a difference in security services.</p>
+    <div class="space-x-4">
+      <button class="R bg-red-500 text-white px-6 py-2 rounded">Learn More</button>
+      <button class="C border px-6 py-2 rounded">Sign Up</button>
+    </div>
+  </section>  <!-- Services -->  <section class="S2 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">YOUR SAFETY WITH OUR PROFESSIONAL SERVICES</h2>
+    <p class="max-w-xl mx-auto mb-8">Our subscription-based security services offer peace of mind with highly trained personnel. Hire ex-army and police officers to ensure your safety at any time.</p>
+    <div class="grid md:grid-cols-3 gap-8 px-4 max-w-6xl mx-auto">
+      <div>
+        <div class="im bg-gray-200 h-40 mb-4"></div>
+        <h3 class="font-bold">FLEXIBLE HIRING OPTIONS</h3>
+      </div>
+      <div>
+        <div class="im bg-gray-200 h-40 mb-4"></div>
+        <h3 class="font-bold">EXPERT SECURITY PERSONNEL</h3>
+      </div>
+      <div>
+        <div class="im bg-gray-200 h-40 mb-4"></div>
+        <h3 class="font-bold">AFFORDABLE PLANS</h3>
+      </div>
+    </div>
+  </section>  <!-- Team -->  <section class="S3 py-16 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-8">OUR TEAM</h2>
+    <div class="grid md:grid-cols-4 gap-6 px-4 max-w-6xl mx-auto">
+      <!-- Repeat for each team member -->
+      <div>
+        <div class="bg-gray-200 h-24 w-24 rounded-full mx-auto mb-2"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Pay Icon"></div>
+        <h4 class="font-semibold">Rupesh Gupta</h4>
+        <p class="text-sm">Founder</p>
+      </div>
+      <div>
+        <div class="bg-gray-200 h-24 w-24 rounded-full mx-auto mb-2"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="Schedule Icon"></div>
+        <h4 class="font-semibold">Hansika Gupta</h4>
+        <p class="text-sm">Co. Founder</p>
+      </div>
+      <div>
+        <div class="bg-gray-200 h-24 w-24 rounded-full mx-auto mb-2"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Pay Icon"></div>
+        <h4 class="font-semibold">Ansh</h4>
+        <p class="text-sm">C.E.O</p>
+      </div>
+      
+      <!-- Add more team members as needed -->
+    </div>
+  </section>  <!-- Job Openings -->  <section class="py-16 px-4 bg-red-50">
+    <h2 class="text-3xl font-bold mb-8 text-center">JOB OPENINGS</h2>
+    <div class="max-w-4xl mx-auto space-y-6">
+      <!-- Repeat for each job listing -->
+      <div>
+        <h3 class="font-semibold">SECURITY OFFICER <span class="text-sm text-gray-600">Remote</span></h3>
+        <p class="text-sm">Join our elite team of security professionals. We are seeking experienced individuals with military or police backgrounds. Enjoy competitive hourly rates and flexible scheduling.</p>
+        <button class="C mt-2 border px-4 py-1 rounded">Apply Now</button>
+      </div>
+      <!-- Add more job roles -->
+    </div>
+  </section>  <!-- Contact + FAQs -->  <section class="py-16 px-4">
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <form class="space-y-4">
+        <h2 class="text-3xl font-bold">GET IN TOUCH</h2>
+        <input class="border w-full p-2" type="text" placeholder="Name" required>
+        <input class="border w-full p-2" type="email" placeholder="Email" required>
+        <textarea class="border w-full p-2" placeholder="Message" required></textarea>
+        <label class="inline-flex items-center">
+          <input type="checkbox" class="mr-2"> <div class="t"><a>I accept the Terms</a></div>
+        </label>
+        <button class="R bg-red-500 text-white px-4 py-2 rounded">Submit</button>
+      </form>
+      <div>
+        <h2 class="text-3xl font-bold mb-4">FAQS</h2>
+        <div class="space-y-4">
+          <div>
+            <strong>How do I apply?</strong>
+            <p>Visit our careers page and complete the application form.</p>
+          </div>
+          <div>
+            <strong>What are the requirements?</strong>
+            <p>Experience in security, military, or police background preferred.</p>
+          </div>
+          <div>
+            <strong>How much i will earn?</strong>
+            <p>Visit our careers page and complete the application form.</p>
+          </div>
+          <!-- Add more FAQs -->
+        </div>
+      </div>
+    </div>
+  </section>  <!-- CTA -->  <section class="bg-gray-50 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">JOIN OUR SECURITY TEAM TODAY</h2>
+    <p class="mb-6">Become a part of our elite security force and make a difference in safety.</p>
+    <button class="R bg-red-500 text-white px-6 py-2 rounded">Apply</button>
+    <button class="C ml-4 border px-6 py-2 rounded">Learn More</button>
+  </section>  <!-- Footer -->  <footer class="bg-white py-8 border-t">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-4 text-sm">
+      <div class="font-bold text-xl">Logo</div>
+      <div>
+        <p class="font-semibold">Company Info</p>
+        <ul><li>About Us</li><li>Careers</li><li>Contact</li><li>Support Center</li></ul>
+      </div>
+      <div>
+        <p class="font-semibold">Services</p>
+        <ul><li>Security Plans</li><li>Pricing</li><li>Testimonials</li><li>Blog</li></ul>
+      </div>
+      <div>
+        <p class="font-semibold">Stay Connected</p>
+        <ul><li>Facebook</li><li>Twitter</li><li>LinkedIn</li><li>Instagram</li></ul>
+      </div>
+      <div>
+        <p class="font-semibold">Subscribe</p>
+        <input class="border p-1 w-full" type="email" placeholder="Enter your email">
+        <button class="mt-2 bg-black text-white px-4 py-1 rounded">Subscribe</button>
+      </div>
+    </div>
+    <div class="text-center mt-4 text-xs">© 2024 Relume. All rights reserved.</div>
+  </footer>
+</body>
+</html>
