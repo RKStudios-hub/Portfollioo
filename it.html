@@ -6,6 +6,10 @@
   <link rel="icon" href="logo3.svg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <style>
+            html {
+  scroll-behavior: smooth;
+}
+
     a {
       text-decoration: none;
       color: inherit;
@@ -438,7 +442,7 @@ function toggleMenu(button) {
       </div>
       <!-- Add more job roles -->
     </div>
-  </section>  <!-- Contact + FAQs -->  <section class="py-16 px-4">
+  </section>  <!-- Contact + FAQs -->  <section class="py-16 px-4" id="mainarea">
     <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
       <form class="space-y-4">
         <h2 class="text-3xl font-bold">APPLY HERE</h2>
@@ -514,7 +518,7 @@ function toggleMenu(button) {
   <!-- CTA -->  <section class="bg-gray-50 py-16 text-center">
     <h2 class="text-3xl font-bold mb-4">JOIN OUR SECURITY TEAM TODAY</h2>
     <p class="mb-6">Become a part of our elite security force and make a difference in safety.</p>
-    <button class="R bg-red-500 text-white px-6 py-2 rounded">Apply</button>
+    <button class="R bg-red-500 text-white px-6 py-2 rounded"><a href="#mainarea">Apply</a></button>
     <button class="C ml-4 border px-6 py-2 rounded">Learn More</button>
   </section>  <!-- Footer -->  <footer class="bg-white py-8 border-t">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-4 text-sm">
@@ -541,4 +545,5 @@ function toggleMenu(button) {
   </footer>
 </body>
 </html>
+
 
