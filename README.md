@@ -1,1 +1,10 @@
 # Portfollioo
+# APEX SECURITIES
+
+A responsive security service landing page built with HTML, CSS, and JavaScript. This was one of my first frontend projects, created for personal learning and practice.
+
+The website includes a modern layout, subscription pricing cards, a responsive navigation bar with a hamburger menu, and smooth hover animations.
+
+No frameworks were used — just core web fundamentals.
+
+Built to strengthen my frontend development and responsive design skills.
